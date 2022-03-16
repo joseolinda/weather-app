@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import "./app.css"
+import Background from './components/Background'
 
 const api = {
   key: "b94e53a435a10994c9f671ff48ecbc39",
@@ -64,7 +65,7 @@ function App() {
 
 
   return (
-    <div className={(typeof weather.main != "undefined") ? ((weather.main.temp > 12) ? 'container warm' : 'container') : 'container'}>
+    <Background classBg={(typeof weather.main != "undefined") ? ((weather.main.temp > 12) ? 'container warm' : 'container') : 'container'}>
       <div className={(typeof weather.main != "undefined") ? ((weather.main.temp > 12) ? 'app warm' : 'app') : 'app'}>
         <main>
           <div className='top'>
@@ -95,7 +96,7 @@ function App() {
         </main>
 
       </div>
-    </div>
+    </Background>
   )
 }
 
